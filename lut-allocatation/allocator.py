@@ -32,7 +32,7 @@ class Allocator:
 
     def allocate(self):
         with open('LUT.txt', mode='w')as lut_file:
-            fractional_array = numpy.linspace(0, 1, 257)[:-1]
+            fractional_array = numpy.linspace(0, 1, 258)[:-1]  # dividing range (0, 1) into 256 different fraction
             for frac in fractional_array:
                 ans = Allocator.frac_to_bin(self.func(frac), self.__bits__)
                 lut_file.write(f'{ans}\n')
