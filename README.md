@@ -16,12 +16,20 @@ For the first part of the project, I created a python code that generates a LUT 
 
 After generating the LUT table we only need to make a module that returns the related LUT entry based on `8-bit input`.
 
+| <img src="doc/screenshots/part1-gate.png"/> | <img src="doc/screenshots/part1-synth.png"/> |
+:--------------------------------------------:|:---------------------------------------------:
+| RTL Schematic | Technology Schematic |
+
 ## Linear Interpolation (<a href="Second Part/">Second Part</a>)
 For the second part, we must implement the function using linear interpolation using 64 slut memories so first of all, we must separate `64 entries` from the table and the choices must be in equal places so we collect every `4k` (k = 0, 1, ...) entry.
 
 After that we need to implement the formula below inside our Verilog module.
 
 For being able to synthesize the module on FPGA we must remove the division; the best thing is to make it into a shift division (base 2 division) so that let module gets synthesized.
+
+| <img src="doc/screenshots/part2-gate.png"/> | <img src="doc/screenshots/part2-synth.png"/> |
+:--------------------------------------------:|:---------------------------------------------:
+| RTL Schematic | Technology Schematic |
 
 Base on the course slides we can convert the formula to this (we know that `XLSB` is input `(8-6=)2 LSB` bits and `X2 – X1 = 2N-P = 2(8-6))`.
 
@@ -31,6 +39,10 @@ Base on the course slides we can convert the formula to this (we know that `XLSB
 this part required learning the quadratic method, after a little search I got a YouTube video that explained: "**Quadratic Interpolation**" ([YouTube Link](https://www.youtube.com/watch?v=BQHyEAl3-qk)).
 
 First of all, we need a 64 slut LUT which is just like part 2. 
+
+| <img src="doc/screenshots/part3-gate.png"/> | <img src="doc/screenshots/part3-synth.png"/> |
+:--------------------------------------------:|:---------------------------------------------:
+| RTL Schematic | Technology Schematic |
 
 Tor implementing the formula first we need to eliminate the division so:
 
