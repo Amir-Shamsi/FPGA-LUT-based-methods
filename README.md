@@ -1,7 +1,7 @@
 # FPGA LUT based methods
 
 * Course: *Field Programmable Gate Array (FPGA)*
-* Proffesor: *Dr. Mohsen Raji*
+* Professor: *Dr. Mohsen Raji*
 * Fall **2022/23**
 
 ## Project document
